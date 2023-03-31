@@ -66,6 +66,18 @@ variable "controller_service_externalTrafficPolicy" {
   default     = "Local"
 }
 
+variable "controller_service_enableHttp" {
+  description = "Controller service enable http port on NLB"
+  type        = bool
+  default     = true
+}
+
+variable "controller_service_enableHttps" {
+  description = "Controller service enable https port on NLB"
+  type        = bool
+  default     = true
+}
+
 variable "controller_service_targetPorts_http" {
   description = "Controller service https targetPort"
   type        = string

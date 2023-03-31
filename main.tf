@@ -54,6 +54,14 @@ resource "helm_release" "nginx_ingress_controller" {
     value = "${var.controller_request_memory}Mi"
   }
   set {
+    name  = "controller.service.enableHttp"
+    value = var.controller_service_enableHttp
+  }
+  set {
+    name  = "controller.service.enableHttps"
+    value = var.controller_service_enableHttps
+  }
+  set {
     name  = "controller.service.targetPorts.http"
     type  = "string"
     value = var.controller_service_targetPorts_http
